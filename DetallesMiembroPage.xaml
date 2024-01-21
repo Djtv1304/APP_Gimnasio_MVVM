@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_Gimnasio.DetallesMiembroPage"
+             BackgroundImageSource="fondo_app.jpg"
+             Title="Detalles de usuario">
+    <VerticalStackLayout
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand"
+        Spacing="10">
+        <!-- Texto e imagen -->
+        <StackLayout
+            Spacing="30">
+            <Label
+                Text="Bienvenido"
+                FontSize="30"
+                FontFamily="NovaSquare-Regular"
+                HorizontalOptions="Center"/>
+            <StackLayout
+                Orientation="Horizontal"
+                HorizontalOptions="Center">
+                <Label Text="ID de usuario: "
+                       FontSize="20"
+                       FontFamily="NovaSquare-Regular"
+                       HorizontalOptions="Center"
+                       VerticalOptions="Center"/>
+                <Frame
+                    Padding="10">
+                    <Label 
+                        x:Name="idUsuario"
+                        Text="10"/>
+                </Frame>
+            </StackLayout>
+
+            <Frame
+                Padding="10"
+                CornerRadius="100"
+                HeightRequest="200"
+                WidthRequest="200">
+                <Image
+                    Source="usuario.png"
+                    VerticalOptions="FillAndExpand"
+                    HorizontalOptions="FillAndExpand"/>
+            </Frame>
+        </StackLayout>
+
+        <!-- OCampos de texto -->
+        <StackLayout
+            BackgroundColor="Transparent"
+            Spacing="1">
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Nombre:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="40"
+                       WidthRequest="300"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="NombreMiembro"
+                        Text="Gabriel"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Correo electrónico:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="40"
+                       WidthRequest="300"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="Correo"
+                        Text="gabopzito@gmail.com"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+
+            <StackLayout
+                   Padding="5">
+                <Label
+                    Text="Fecha inscripción:"
+                    FontFamily="NovaSquare-Regular"
+                    HorizontalOptions="Center"/>
+                <Frame
+                       HeightRequest="40"
+                       WidthRequest="300"
+                       HasShadow="True"
+                       BorderColor="White"
+                       HorizontalOptions="Center"
+                       Padding="0">
+                    <Label
+                        x:Name="Fecha"
+                        Text="24-11-2023"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+                </Frame>
+            </StackLayout>
+        </StackLayout>
+
+        <StackLayout
+            Spacing="10">
+            <Frame
+            CornerRadius="50"
+            HeightRequest="80"
+            WidthRequest="300">
+                <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="Center"
+            Spacing="10">
+                    <ImageButton
+                    Source="cerrar_sesion.png"
+                    HeightRequest="50"
+                    WidthRequest="50"
+                    Command="{Binding OnClickCerrarSesion}"/>
+                    <Label
+                Text="Cerrar Sesión"
+                FontSize="Medium"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"/>
+                </StackLayout>
+            </Frame>
+            <Button
+            Text="Cambiar Contraseña"
+            FontSize="18"
+            TextColor="Blue" 
+            Background="Transparent"
+            Command="{Binding OnClickCambiar}"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>

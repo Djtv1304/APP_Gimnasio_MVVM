@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="APP_Gimnasio.HomePage"
+             NavigationPage.HasBackButton="False"
+             BackgroundImageSource="fondo_app.jpg"
+             Title="Inicio">
+
+
+    <VerticalStackLayout 
+        Spacing="10"
+        Padding="40"
+        VerticalOptions="Center"
+        HorizontalOptions="FillAndExpand">
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="Center">
+            <Label Text="ID: "
+                   VerticalOptions="Center"
+                   FontSize="40"
+                   FontAttributes="Bold"/>
+            
+            <Frame HeightRequest="60"
+               WidthRequest="100"
+               Padding="0">
+                <Label
+                x:Name="idMiembro"
+                Text="40"
+                HorizontalOptions="Center"
+                FontSize="50"
+                FontAttributes="Bold"
+                FontFamily="NovaSquare-Regular"/>
+            </Frame>
+        </StackLayout>
+
+        <Image
+                Source="imagen_home.png"
+                HeightRequest="200"/>
+
+        <StackLayout
+            Orientation="Horizontal"
+            HorizontalOptions="Center">
+
+            <Frame ZIndex="1"
+                  HasShadow="True"
+                  BorderColor="White"
+                  HeightRequest="60"
+                  WidthRequest="60"
+                  CornerRadius="28"
+                  Padding="0">
+                <ImageButton
+                    Source="usuario.png"
+                    HeightRequest="20"
+                    WidthRequest="20"
+                    Command="{Binding OnClickDetallesMiembro}"/>
+            </Frame>
+
+            <Frame
+                HeightRequest="45"   
+                WidthRequest="300"
+                Margin="-20,0,0,0"
+                HasShadow="True"
+                BorderColor="White"
+                HorizontalOptions="FillAndExpand"
+                Padding="0">
+                <Label x:Name="Username"
+                       VerticalOptions="Center"
+                       HorizontalOptions="Center"
+                       Text="Hola"
+                       FontSize="18"
+                       FontFamily="NovaSquare-Regular"/>
+            </Frame>
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Vertical"
+            Spacing="10">
+                <!-- Primer elemento del StackLayout -->
+            <Frame
+                ZIndex="1"
+                HasShadow="True"
+                CornerRadius="20"
+                Padding="0"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="#F7F7F7">
+                <ImageButton
+                    Source="img_pagos.png"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    Command="{Binding OnClickHistorialPagos}"/>
+            </Frame>
+            <!-- Segundo elemento del StackLayout -->
+
+            <Frame
+                ZIndex="1"
+                HasShadow="True"
+                CornerRadius="20"
+                Padding="0"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="#F7F7F7">
+                <ImageButton
+                    Source="img_visitas.jpg"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    Command="{Binding OnClickHistorialVisitas}"/>
+            </Frame>
+            <!-- Tercer elemento del StackLayout -->
+            <Frame
+                ZIndex="1"
+                HasShadow="True"
+                CornerRadius="20"
+                Padding="0"
+                VerticalOptions="Fill"
+                HorizontalOptions="Fill"
+                BackgroundColor="#F7F7F7">
+                <ImageButton
+                    Source="img_mebresia.jpg"
+                    WidthRequest="200"
+                    HeightRequest="100"
+                    Command="{Binding OnClickDetallesMembresia}"/>
+            </Frame>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
