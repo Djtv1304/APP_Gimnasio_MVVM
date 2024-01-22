@@ -35,8 +35,23 @@
                         VerticalOptions="Center"
                         Text="juan.pozo@udla.edu.ec"/>
                 </Frame>
-                
             </StackLayout>
+            <Frame
+                    ZIndex="1"
+                    HasShadow="True"
+                    CornerRadius="20"
+                    Padding="0"
+                    HeightRequest="50"
+                    WidthRequest="350"
+                    VerticalOptions="Fill"
+                    HorizontalOptions="Fill"
+                    BackgroundColor="#F7F7F7">
+                <Button
+                        Text="Nuevo Pago"
+                        WidthRequest="350"
+                        HeightRequest="50"
+                        Command="{Binding OnClickNuevoPago}"/>
+            </Frame>
 
         </StackLayout>
         <ListView x:Name="listaPagos" 

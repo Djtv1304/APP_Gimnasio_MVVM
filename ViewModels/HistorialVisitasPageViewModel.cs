@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace APP_Gimnasio.ViewModels
 {
@@ -53,6 +54,14 @@ namespace APP_Gimnasio.ViewModels
             listaVisitas = new ObservableCollection<Visita>(await GetVisitas());
 
         }
+
+        public ICommand OnClickRegistrarVisita =>
+            new Command(async () =>
+            {
+
+                await App.Current.MainPage.Navigation.PushAsync(new RegistrarVisitaPage());
+
+            });
 
 
     }

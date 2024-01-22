@@ -6,6 +6,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace APP_Gimnasio.ViewModels
 {
@@ -52,6 +53,14 @@ namespace APP_Gimnasio.ViewModels
             listaPagos = new ObservableCollection<Pago>(await GetPagos());
 
         }
+
+        public ICommand OnClickNuevoPago =>
+            new Command(async () =>
+            {
+
+                await Application.Current.MainPage.Navigation.PushAsync(new NuevoPagoPage());
+
+            });
 
     }
 }

@@ -1,0 +1,40 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="APP_Gimnasio.NuevoPagoPage" BackgroundColor="Black" NavigationPage.HasNavigationBar="False" BackgroundImageSource="fondo_login.png" Title="Nuevo Pago">
+    <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
+        <StackLayout Padding="5">
+            <Label Text="Fecha Pago:" FontFamily="NovaSquare-Regular" HorizontalOptions="Center" TextColor="Gray"/>
+            <DatePicker
+                x:Name="PagoFecha"
+                Format="dd-MM-yyyy"
+                Date="{Binding PagoFecha}"/>
+            <TimePicker x:Name="CaducidadHora" Format="HH:mm" Time="{Binding CaducidadHora}"/>
+        </StackLayout>
+        <StackLayout Padding="5">
+            <Entry Placeholder="Monto" x:Name="Monto" Text="{Binding MontoPago}"/>
+        </StackLayout>
+        <StackLayout Padding="5">
+            <Label Text="Tarjeta:" FontFamily="NovaSquare-Regular" HorizontalOptions="Center" TextColor="Gray"/>
+            <Picker x:Name="TipoTarjeta" Title="Seleccionar tarjeta" HorizontalOptions="Center" WidthRequest="300" ItemsSource="{Binding OpcionesTarjetas}" SelectedItem="{Binding TarjetaSeleccionada}"/>
+        </StackLayout>
+        <StackLayout Padding="5">
+            <Entry Placeholder="Número de Tarjeta" x:Name="NumTarjeta" Text="{Binding NumTarjeta}"/>
+            <Entry Placeholder="CVV" x:Name="CVV" Text="{Binding CVV}" />
+        </StackLayout>
+        <StackLayout Padding="5">
+            <Label Text="Fecha Caducidad:" FontFamily="NovaSquare-Regular" HorizontalOptions="Center" TextColor="Gray"/>
+            <DatePicker x:Name="CaducidadFecha" Format="dd-MM-yyyy" Date="{Binding CaducidadFecha}"/>
+        </StackLayout>
+        <StackLayout Padding="5">
+            <Entry Placeholder="Titular de la Tarjeta" x:Name="Titular" Text="{Binding Titular}"/>
+        </StackLayout>
+
+        <StackLayout
+            Orientation="Horizontal"
+            VerticalOptions="Center"
+            HorizontalOptions="Center"
+            Padding="5"
+            Spacing="10">
+            <Button Text="Pagar" FontSize="30" Command="{Binding OnClickPagar}"/>
+            <Button Text="Regresar" FontSize="30" Command="{Binding OnClickRegresar}"/>
+        </StackLayout>
+    </VerticalStackLayout>
+</ContentPage>
