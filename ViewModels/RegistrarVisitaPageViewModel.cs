@@ -13,7 +13,7 @@ namespace APP_Gimnasio.ViewModels
     public class RegistrarVisitaPageViewModel
     {
 
-        public ImageSource QrCodeImage { get; set; }
+        public string QrCode { get; set; }
 
         public RegistrarVisitaPageViewModel()
         {
@@ -40,25 +40,13 @@ namespace APP_Gimnasio.ViewModels
 
         }
 
-        public async Task GenerateQrCode()
+        public async void GenerateQrCode()
         {
 
             Miembro miembroVisitante = await getMiembro();
 
-            var barcodeWriter = new ZXing.Mobile.BarcodeWriter
-            {
-                Format = ZXing.BarcodeFormat.QR_CODE,
-                Options = new ZXing.Common.EncodingOptions
-                {
-                    Width = 300,
-                    Height = 300
-                }
-            };
-
-            var barcode = barcodeWriter.Write("Bienvenido " + miembroVisitante.nombreMiembro + " a tu gimnasio favorito!");
-            QrCodeImage = ImageSource.FromStream(() => new MemoryStream(barcode));
+            QrCode = $"Bienvenido {miembroVisitante.nombreMiembro} a su gimnasio favorito!";
 
         }
-
     }
 }
